@@ -1,5 +1,6 @@
 package com.example.speechtotext;
 
+
 import java.util.ArrayList;
 
 
@@ -30,16 +31,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class Popup extends Fragment implements AnimationListener, OnClickListener {
+public class HubGlow extends Fragment implements AnimationListener, OnClickListener {
 	
-	private TextView mText, txt, tv, tv_dropdown_symbol, text_background;
-	ImageView iv0, iv1, iv2, iv3, iv4, iv5, iv6, iv7, iv8,iv9, iv10, image_hub;
+	private TextView mText, txt, tv, tv_dropdown_symbol;
+	ImageView iv0, iv10;
 	FrameLayout fv;
-	LinearLayout ll_suggestions_heading, ll_suggestions_list, text_background1234;
+	LinearLayout ll_suggestions_heading, ll_suggestions_list;
 	private SpeechRecognizer sr;
 	String txtview = "";
 	String cmnd="";
-	ObjectAnimator anim, animshadow;
+	ObjectAnimator anim;
 	int flag=0;
 	MediaPlayer mp;
 	
@@ -49,42 +50,28 @@ public class Popup extends Fragment implements AnimationListener, OnClickListene
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
-		View view = inflater.inflate(R.layout.popup1, container, false);
+		View view = inflater.inflate(R.layout.hubglow, container, false);
 		mText = (TextView)view.findViewById(R.id.txtText);
-		
 		tv_dropdown_symbol = (TextView)view.findViewById(R.id.tv_dropdown_symbol);
 		fv = (FrameLayout)view.findViewById(R.id.frameLayout1);
 		ll_suggestions_heading = (LinearLayout)view.findViewById(R.id.ll_suggestions_heading);
 		ll_suggestions_list = (LinearLayout)view.findViewById(R.id.ll_suggestions_list);
-//		iv0=(ImageView) fv.findViewById(R.id.image_back0);
-//		iv1=(ImageView) fv.findViewById(R.id.i1);
-//		iv2=(ImageView) fv.findViewById(R.id.i2);
-//		iv3=(ImageView) fv.findViewById(R.id.i3);
-//		iv4=(ImageView) fv.findViewById(R.id.i4);
-//		iv5=(ImageView) fv.findViewById(R.id.i5);
-//		iv6=(ImageView) fv.findViewById(R.id.i6);
-//		iv7=(ImageView) fv.findViewById(R.id.i7);
-//		iv8=(ImageView) fv.findViewById(R.id.i8);
-//		iv9=(ImageView) fv.findViewById(R.id.i9);
+		//iv10=(ImageView) fv.findViewById(R.id.i10);
 		
-		image_hub = (ImageView) fv.findViewById(R.id.image_hub);
-		text_background = (TextView) fv.findViewById(R.id.text_background12345);
-		text_background1234 = (LinearLayout) fv.findViewById(R.id.text_background1234);
 		tv = (TextView) fv.findViewById(R.id.text);
 		Typeface font = Typeface.createFromAsset(getActivity().getAssets(),
 				"fonts/fontawesome-webfont.ttf");
 		tv.setTypeface(font);
-		text_background.setTypeface(font);
 		Typeface font2 = Typeface.createFromAsset(getActivity().getAssets(),
 				"fonts/expletussans.ttf");
 		
 		mText.setTypeface(font2);
 		sr = SpeechRecognizer.createSpeechRecognizer(getActivity());       
-        sr.setRecognitionListener(new listener());
-        //anim = ObjectAnimator.ofInt(text_background, "textColor",Color.rgb(0, 136, 0), Color.rgb(00, 200, 0), Color.rgb(0, 245, 0));
-		//anim.setDuration(2000);
-		
-		
+        sr.setRecognitionListener(new listener()); 
+		//Toast.makeText(getActivity(), "Your wish", Toast.LENGTH_SHORT).show();
+        anim = ObjectAnimator.ofInt(tv, "textColor",Color.rgb(255, 8, 68));
+		anim.setDuration(1000);
+		anim.start();
 		
 		ll_suggestions_heading.setOnClickListener(this);
 		
@@ -97,23 +84,23 @@ public class Popup extends Fragment implements AnimationListener, OnClickListene
                  Log.i("111111","11111111");
                  
                 // load the animation
-//                 animFadein = AnimationUtils.loadAnimation(getActivity(),
-//                         R.anim.rotate);
-//                 animFadeopposite = AnimationUtils.loadAnimation(getActivity(),
-//                         R.anim.rotate_counterclockwise);
-//                 animFadehalf = AnimationUtils.loadAnimation(getActivity(),
-//                         R.anim.rotate_half_speed);
-//                 animFadehalfoppposite = AnimationUtils.loadAnimation(getActivity(),
-//                         R.anim.rotate_half_speed_back);
+                 animFadein = AnimationUtils.loadAnimation(getActivity(),
+                         R.anim.rotate);
+                 animFadeopposite = AnimationUtils.loadAnimation(getActivity(),
+                         R.anim.rotate_counterclockwise);
+                 animFadehalf = AnimationUtils.loadAnimation(getActivity(),
+                         R.anim.rotate_half_speed);
+                 animFadehalfoppposite = AnimationUtils.loadAnimation(getActivity(),
+                         R.anim.rotate_half_speed_back);
                  // set animation listener
-//                 animFadein.setAnimationListener(this);
-//                 animFadeopposite.setAnimationListener(this);
-//                 animFadehalf.setAnimationListener(this);
-//                 animFadehalfoppposite.setAnimationListener(this);
-                 //fv.startAnimation(animFadein);
+                 animFadein.setAnimationListener(this);
+                 animFadeopposite.setAnimationListener(this);
+                 animFadehalf.setAnimationListener(this);
+                 animFadehalfoppposite.setAnimationListener(this);
+                 fv.startAnimation(animFadein);
               //   tv.startAnimation(animFadeopposite);
-                 //tv.startAnimation(animFadehalfoppposite);
-                 //iv10.startAnimation(animFadeopposite);
+                 tv.startAnimation(animFadehalfoppposite);
+                 iv10.startAnimation(animFadeopposite);
 		return view;
 	}
 	
@@ -137,8 +124,7 @@ public class Popup extends Fragment implements AnimationListener, OnClickListene
 		public void onEndOfSpeech() {
 			// TODO Auto-generated method stub
 			//tv.setTextColor(Color.BLACK);
-		//	tv.setTextColor(Color.rgb(36, 168, 19));
-			text_background.setShadowLayer(40f, 0f, 0f, 0xff00ff00);
+			tv.setTextColor(Color.rgb(36, 168, 19));
 		}
 
 		@Override
@@ -226,20 +212,16 @@ public class Popup extends Fragment implements AnimationListener, OnClickListene
 		@Override
 		public void onRmsChanged(float rmsdB) {
 			// TODO Auto-generated method stub
-			
-			//anim.start();
-			//animshadow.start();
+
 			
 			int volumeNo0 = (int)(((rmsdB*rmsdB*rmsdB)+120.))+100;
 			int volumeNo1 = (int)(((rmsdB*rmsdB)+120.))+50;
 			int volumeNo2 = (int)(((rmsdB*rmsdB)+120.))+35;
 			int volumeNo3 = (int)(((rmsdB)+120.))+25;
 			int volumeNo4 = (int)((120.));
-			if(volumeNo1>255)
-				volumeNo1 = 255;
 			
 			FrameLayout.LayoutParams lp0 = new FrameLayout.LayoutParams((volumeNo0+40), (volumeNo0+40));
-			FrameLayout.LayoutParams lp1 = new FrameLayout.LayoutParams((volumeNo1), (volumeNo1));
+			FrameLayout.LayoutParams lp1 = new FrameLayout.LayoutParams((volumeNo1+40), (volumeNo1+40));
 			FrameLayout.LayoutParams lp2 = new FrameLayout.LayoutParams((volumeNo2+40), (volumeNo2+40));
 			FrameLayout.LayoutParams lp3 = new FrameLayout.LayoutParams((volumeNo3+40), (volumeNo3+40));
 			FrameLayout.LayoutParams lp4 = new FrameLayout.LayoutParams((volumeNo4+40), (volumeNo4+40));
@@ -251,34 +233,6 @@ public class Popup extends Fragment implements AnimationListener, OnClickListene
 			lp3.gravity = Gravity.CENTER;
 			lp4.gravity = Gravity.CENTER;
 			lp5.gravity = Gravity.CENTER;
-			//lp1.background = R.drawable.shape_circle;
-			Log.i("value", Integer.toString(volumeNo1));
-//			iv0.setLayoutParams(lp1);
-//			iv1.setLayoutParams(lp4);
-//			iv2.setLayoutParams(lp2);
-//			iv3.setLayoutParams(lp4);
-//			iv4.setLayoutParams(lp2);
-//			iv5.setLayoutParams(lp1);
-//			iv6.setLayoutParams(lp3);
-//			iv7.setLayoutParams(lp4);
-//			iv8.setLayoutParams(lp3);
-//			iv9.setLayoutParams(lp2);
-			
-			text_background1234.setLayoutParams(lp1);
-			
-			text_background1234.setBackgroundColor(Color.rgb(255,volumeNo1,0));
-			text_background1234.setBackgroundResource(R.drawable.shape_circle);
-			//text_background1234.setShadowLayer(40f, 0f, 0f, Color.rgb(255,volumeNo1,0));
-			//iv10.setLayoutParams(lp5);
-//			iv2.startAnimation(animFadehalf);
-//			iv4.startAnimation(animFadehalf);
-//			iv6.startAnimation(animFadehalf);
-//			iv2.startAnimation(animFadehalf);
-//			iv4.startAnimation(animFadehalf);
-//			iv6.startAnimation(animFadehalf);
-//			iv10.startAnimation(animFadeopposite);
-			
-			
 			
 			
 			

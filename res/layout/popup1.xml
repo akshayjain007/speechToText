@@ -1,131 +1,252 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/popupWindow"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#50000000" 
     android:alpha="1"
-    android:layout_margin="20dp"
-    android:id="@+id/popupWindow">
-     <FrameLayout android:id="@+id/frameLayout1" 
-    android:layout_width="fill_parent" android:layout_height="200dp"
-     android:gravity="center">
-   
-    <!--  <ImageView android:id="@+id/imageView1" android:layout_width="fill_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/frameLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="200dp"
+        android:gravity="center" >
+
+        <!--
+    <ImageView android:id="@+id/imageView1" android:layout_width="fill_parent"
         android:layout_height="fill_parent" android:src="@drawable/background"></ImageView>
     <ImageView android:id="@+id/imageView2" android:layout_width="wrap_content"
         android:layout_gravity="center" android:layout_height="wrap_content"
-        android:src="@drawable/news"></ImageView>-->
-    
-    <ImageView 
-        android:id="@+id/image_back0"
-        android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:src="@drawable/c0"
-    android:layout_gravity="center"
-        />
-    <ImageView 
-        android:id="@+id/image_back1"
-        android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:src="@drawable/c1"
-    android:layout_gravity="center"
-        />  
-    <ImageView 
-        android:id="@+id/image_back2"
-        android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:src="@drawable/c2"
-    android:layout_gravity="center"
-        />
-    <ImageView 
-        android:id="@+id/image_back3"
-        android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:src="@drawable/c3"
-    android:layout_gravity="center"
-        />
-     <ImageView 
-        android:id="@+id/image_back4"
-        android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:src="@drawable/c4"
-    android:layout_gravity="center"
-        />
-   <ImageView 
-        android:id="@+id/image_front"
-        android:layout_width="48dp"
-    android:layout_height="48dp"
-    android:src="@drawable/circle_in"
-    android:layout_gravity="center"
-        /> 
-       <TextView
-           android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="a"
-    android:layout_gravity="center"
-    android:id="@+id/text"></TextView>
+        android:src="@drawable/news"></ImageView>
+        
+
+        <ImageView
+            android:id="@+id/image_back0"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:src="@drawable/i10" />
+
+        <ImageView
+            android:id="@+id/i1"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.2"
+            android:src="@drawable/i1" />
+
+        <ImageView
+            android:id="@+id/i2"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.1"
+            android:src="@drawable/i2" />
+
+        <ImageView
+            android:id="@+id/i3"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.9"
+            android:src="@drawable/i3" />
+
+        <ImageView
+            android:id="@+id/i4"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.4"
+            android:src="@drawable/i4" />
+
+        <ImageView
+            android:id="@+id/i5"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.7"
+            android:src="@drawable/i5" />
+
+        <ImageView
+            android:id="@+id/i6"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.5"
+            android:src="@drawable/i6" />
+
+        <ImageView
+            android:id="@+id/i7"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.7"
+            android:src="@drawable/i7" />
+
+        <ImageView
+            android:id="@+id/i8"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.8"
+            android:src="@drawable/i8" />
+
+        <ImageView
+            android:id="@+id/i9"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:alpha="0.3"
+            android:src="@drawable/i9" />
+
+        <ImageView
+            android:id="@+id/i10"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center"
+            android:src="@drawable/i0" />-->
+
+        <ImageView
+            android:id="@+id/image_front"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:src="@drawable/circle_in" />
+
+        <TextView
+            android:id="@+id/text_background12345"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="#00ff00"
+            android:shadowRadius="5"
+            android:textColor="#89FF00"
+            android:text="@string/background_circle"
+            android:textSize="100dp" >
+        </TextView>
+         <LinearLayout
+            android:id="@+id/text_background1234"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="#00ff00"
+            android:orientation="horizontal"
+            android:shadowRadius="5"
+            android:background="@drawable/shape_circle"
+            >
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/image_hub"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            android:src="@drawable/hub_cut_out" />
+			
+         <!-- 
+            android:id="@+id/text_background1234"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:shadowColor="#00ff00"
+            android:shadowRadius="5"
+            android:textColor="#ffFFff"
+            android:text=""
+            android:background="@drawable/shape_circle"
+            android:textSize="70dp" />-->
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:shadowColor="#ff0000"
+            android:shadowRadius="40"
+            android:text=""
+            android:textSize="22dp" >
+        </TextView>
     </FrameLayout>
-    <TextView 
-              android:id="@+id/textrms"
-        android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
-    
+
     <TextView
         android:id="@+id/txtText"
-        android:layout_width="wrap_content"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" 
-        android:text="Speak LEAF is listening ........"/>
-    
-    
+        android:padding="10dp"
+        android:text="Speak LEAF is listening ........"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#ffffff" />
+
     <LinearLayout
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="10">
-       "
-       <TextView
-        android:id="@+id/txtText"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_weight="2"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" 
-        android:text="Suggestions"/>
-       <ImageView
-           android:layout_width="fill_parent"
-           android:layout_height="wrap_content"
-           android:layout_weight="8"
-           android:src="@drawable/ic_action_close"/>"
-       
+        android:layout_height="fill_parent"
+        android:background="#60000000"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:id="@+id/ll_suggestions_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#70000000"
+            android:orientation="horizontal"
+            android:padding="10dp"
+            android:weightSum="10" >
+
+            <com.example.speechtotext.CustomTypeFace
+                android:id="@+id/txtText"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingLeft="10dp"
+                android:text="Suggestions"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
+
+            <com.example.speechtotext.CustomTypeFaceFontAwesome
+                android:id="@+id/tv_dropdown_symbol"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="9"
+                android:text="@string/tv_dropdown_symbol"
+                android:textColor="#ffffff"
+                android:textSize="30dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_suggestions_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <com.example.speechtotext.CustomTypeFace
+                android:id="@+id/txtText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="1. Go to bedroom"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff" />
+
+            <com.example.speechtotext.CustomTypeFace
+                android:id="@+id/txtText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:text="2. Dim the lights"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#ffffff" />
+        </LinearLayout>
     </LinearLayout>
-    <TextView
-        android:id="@+id/txtText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" 
-        android:text="1. Go to bedroom"/>
-    <TextView
-        android:id="@+id/txtText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:textColor="#ffffff"
-        android:textAppearance="?android:attr/textAppearanceLarge" 
-        android:text="2. Dim the lights"/>
 
 </LinearLayout>
